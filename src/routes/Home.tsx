@@ -152,8 +152,8 @@ export default function Home() {
     const load = async () => {
       try {
         const [rRes, cRes] = await Promise.all([
-          fetch(`${import.meta.env.BASE_URL}data/kazakhstan-regions.geojson`),
-          fetch(`${import.meta.env.BASE_URL}data/kazakhstan-country.json`),
+          fetch(`${import.meta.env.BASE_URL}/qazatlas/data/kazakhstan-regions.geojson`),
+          fetch(`${import.meta.env.BASE_URL}/qazatlas/data/kazakhstan-country.json`),
         ])
         if (!rRes.ok || !cRes.ok) throw new Error('Не удалось загрузить GeoJSON данные.')
         const regionsData: GeoJsonFeatureCollection = await rRes.json()
